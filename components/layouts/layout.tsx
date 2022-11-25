@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Navbar } from "../ui";
 
 interface Props {
   title?: string;
@@ -15,10 +16,18 @@ export const Layout = ({ children, title }: Props) => {
           name="description"
           content={`Información sobre el pókemon ${title}"`}
         ></meta>
-        <meta name="keywords" content={`${title}. pokemon, pokedex`}></meta>
+        <meta name="keywords" content={`${title}. pokémon, pokedex`}></meta>
       </Head>
 
-      <main>{children}</main>
+      <Navbar />
+
+      <main
+        style={{
+          padding: "0px 20px",
+        }}
+      >
+        {children}
+      </main>
     </>
   );
 };
